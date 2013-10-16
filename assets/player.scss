@@ -1,0 +1,52 @@
+// Place all the styles related to the player controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'mixins/buttons';
+
+body {
+    font-family: verdana, helvetica, sans-serif;
+}
+
+.active {
+  background-color: #40ff40;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.log {
+  margin-top: 50px;
+  border-radius: 5px;
+  border: solid 2px;
+  padding: 15px;
+  font-size: 30px;
+  background-color: lightgrey;
+}
+
+button {
+  @include fancy-button;
+  height: 300px;
+}
+
+@media screen and (max-device-width: 480px) {
+  h1 {
+    font-size: 8em;
+  }
+  button {
+    font-size:100px;
+  }
+  #log {
+    font-size: 50px;
+  }
+}
+
+
+#playerlog {
+    display: none;
+}

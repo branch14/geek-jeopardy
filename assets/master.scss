@@ -1,0 +1,94 @@
+@import 'mixins/buttons';
+
+body {
+    margin: 0;
+    font-family: verdana, helvetcia, arial;
+}
+
+table {
+    height: 100%;
+    margin: 0 auto;
+    background-image: url(/images/jeopardy_board.jpg);
+}
+
+button {
+    @include fancy-button;
+}
+
+
+#modal {
+    position: absolute;
+    width: 1290px;
+    min-height: 810px;
+    max-height: 880px;
+    border: solid 2px;
+    top: 330px;
+    left: 613px;
+    background: #4166F5;
+    opacity: 0;
+    z-index: -1;
+    &.active {
+        opacity: 1;
+        z-index: 1;
+        transition: opacity .50s ease-in-out;
+    }
+
+    text-align: center;
+    .modal_points {
+        padding-top: 140px;
+        color: darkgoldenrod;
+        font-size: 75px;
+        border-bottom: solid 12px;
+    }
+
+    .modal_category, .modal_clue {
+        padding-top: 40px;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .modal_category {
+        border-bottom: solid 12px;
+    }
+}
+
+.category {
+    width: 193px;
+    height: 120px;
+    background-color: #000080;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 154%;
+    float: left;
+    margin-left: 26px;
+}
+
+.categories {
+    margin-top: 30px;
+    margin-left: -26px;
+}
+
+#team-a { background-color: #ff8080; }
+#team-b { background-color: lightgreen; }
+#team-c { background-color: lightblue; }
+
+.details {
+    margin: 50px 20px;
+    padding: 20px 10px;
+    font-weight: bold;
+}
+
+.team, .members, .score {
+    text-align: center;
+}
+
+.team    { font-size: 300%; }
+.members { font-size: 200%; }
+.score   { font-size: 300%; }
+
+#clientaddress {
+    font-size: 400%;
+    width: 100%;
+    text-align: center;
+    border: none;}
