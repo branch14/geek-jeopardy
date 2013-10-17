@@ -2,13 +2,19 @@
 
 # global state
 faye = null
+uuid = null
 
 # faye setup
-$.getScript util.faye_client_url,  ->
+$.getScript util.faye_client_url, ->
   faye = new Faye.Client(util.faye_url)
 
   faye.subscribe "/pong/#{uuid}", (data) ->
-    util.log "pong received with Team: #{data.team}"
+    $('#tag').html "You're Team #{data.team.toUpperCase()}"
+
+  faye.subscribe "/state/#{uuid}", (data) ->
+    $('body').removeClass('active inactive').addClass(data.state)
+    if data.state == 'active'
+      $("#ringin")[0].play()
 
   ping()
   setInterval ping, 5000
@@ -33,3 +39,7 @@ get_uuid = ->
 
 uuid = get_uuid()
 
+# setup dom on document ready
+$ ->
+  $('#buzzer').click ->
+    faye.publish '/buzz', { uuid }
