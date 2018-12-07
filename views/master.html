@@ -8,20 +8,26 @@
     <script src="/assets/master.js" type="text/javascript"></script>
     <script type="text/javascript" src="/javascripts/secret_board_clues.js"></script>
     <script>
-      window.onbeforeunload = function (e) {
-      e = e || window.event;
+     window.onbeforeunload = function (e) {
+       e = e || window.event;
 
-      // For IE and Firefox prior to version 4
-      if (e) {
-          e.returnValue = 'Sure?';
-      }
+       // For IE and Firefox prior to version 4
+       if (e) {
+         e.returnValue = 'Sure?';
+       }
 
-      // For Safari
-      return 'Sure?';
-      };
+       // For Safari
+       return 'Sure?';
+     };
+
+     setTimeout(function () {$('#intro').hide()}, 25000)
+
+     url = window.location.protocol + "//" + window.location.host
+     $(function () {$('#clientaddress').val(url)})
     </script>
   </head>
   <body>
+    <iframe id="intro" style="display: block; position: absolute; top: 0; width: 100vw; height: 100vh" src="https://www.youtube.com/embed/eNkvxqGmscY?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <table cellpadding="0" border="0" cellspacing="0">
       <tr>
         <td rowspan="7" width="408" id="west">

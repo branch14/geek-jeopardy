@@ -1,66 +1,35 @@
-## Teaser for JAZOON'13
+# Welcome to Geek Jeopardy
 
-Alain M. Lafon, senior software engineer and consultant at Panter AG,
-Zurich, lecturer at ZHAW and Zen Buddhist the rest of the day.
+Geek Jeopardy is
 
-Phil Hofmann is senior software engineer, polyglot coder, organizer of
-Pantalks and academic philosopher.
+## Setup
 
-At panter we rapidly build, run and scale your business-critical,
-long-lasting and effective web and mobile solutions. We leverage agile
-development methodologies and cloud enabled technologies in a
-results-only work environment to focus on your benefits. We pursue
-excellence, practice transparency and foster education.
+Install dependencies
 
+    bundle install
 
-(161) Geek Jeopardy - A Making of
+Set your secret password for the master view
 
-As requested by our imaginary customer, we're going to build "Geek
-Jeopardy" as a desktop/mobile frontend app. Join us for a compelling
-chase through the polyglot landscape of a contemproray technology
-stack, accompanied by a live coding session.
+    echo -n 'secret' > .geekpw
 
-On the way we'll briefly explain the employed technologies, as well as
-concepts and patterns, always striving to optimize the product by
-leveraging the power of the latest technologies provided by a vivid
-open source community.
+## Usage
 
-(162) Geek Jeopardy
+Start the server
 
-Join us for session of Geek Jeopardy. Use you smartphone to join a
-team and proof your geek status by answering our geeky
-questions. We'll use the code developed earlier during the live coding
-session.
+    bundle exec rackup -E production
 
-## Frontendconf Talk Proposal
+Browse to
 
-Alain M. Lafon, senior software engineer and consultant at Panter AG,
-Zurich, lecturer at ZHAW and Zen Buddhist the rest of the day.
+    http://localhost:9292/master
 
-Phil Hofmann, senior software engineer at Panter AG, Zurich, coder of
-many languages, organizer of Pantalks and academic philosopher.
+The login is `geek` the password is the one you set before.
 
-We've all been in that situation: Imagine, one of your best clients
-comes up with a new idea, including some fancy features for which the
-latest technology just came in time to make it work, but as always the
-customer needs everything ready for production yesterday.
+The current URL will be used to display the URL for the participants.
+So if running this on you machine, you will want to lookup the current
+IP address of your machine and use that one instead.
 
-Part tech talk, part story, the presentation will be a compelling
-chase through the polyglot landscape of a contemproray technology
-stack, accompanied by a live coding session.
+    hostname -I | cut -d ' ' -f 1
 
-As requested by our customer, we'll build "Geek Jeopardy" as two
-frontend apps. After deployment we'll invite the audience to take
-part, so that the app will run on hundreds of different mobile devices
-using realtime technology to ensure great and enganging gameplay.
-
-
-At the end of the talk we'll invite the audience to the Frontendconf
-party and to join us there for a session of "Geek Jeopardy", at Colab
-Zurich.
-
-
-
-## Notes
+## References
 
 * https://github.com/jakesgordon/javascript-state-machine
