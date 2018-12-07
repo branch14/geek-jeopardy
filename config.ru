@@ -24,7 +24,7 @@ end
 
 map '/master' do
   use Rack::Auth::Basic, 'Geek Master' do |username, password|
-    username == 'geek' && password ==  File.read('.geekpw')
+    username == 'geek' && password == ENV['MASTER_PASSWORD']
   end
   run Rack::File.new('views/master.html')
 end

@@ -1,4 +1,4 @@
-# Welcome to Geek Jeopardy
+0;115;0c# Welcome to Geek Jeopardy
 
 Geek Jeopardy is
 
@@ -8,15 +8,11 @@ Install dependencies
 
     bundle install
 
-Set your secret password for the master view
-
-    echo -n 'secret' > .geekpw
-
 ## Usage
 
 Start the server
 
-    bundle exec rackup -E production
+    MASTER_PASSWORD=secret bundle exec rackup -E production
 
 Browse to
 
