@@ -1,0 +1,10 @@
+{
+  "categories":
+  ["Cat1", "Cat2", "Cat3", "Cat4", "Cat5", "Cat6"],
+  "clues":
+  [["Clue200Cat1", "Clue200Cat2", "Clue200Cat3", "Clue200Cat4", "Clue200Cat5", "Clue200Cat6"],
+   ["Clue400Cat1", "Clue400Cat2", "Clue400Cat3", "Clue400Cat4", "Clue400Cat5", "Clue400Cat6"],
+   ["Clue600Cat1", "Clue600Cat2", "Clue600Cat3", "Clue600Cat4", "Clue600Cat5", "Clue600Cat6"],
+   ["Clue800Cat1", "Clue800Cat2", "Clue800Cat3", "Clue800Cat4", "Clue800Cat5", "Clue800Cat6"],
+   ["Clue1000Cat1", "Clue1000Cat2", "Clue1000Cat3", "Clue1000Cat4", "Clue1000Cat5", "Clue1000Cat6"]]
+}

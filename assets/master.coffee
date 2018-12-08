@@ -4,8 +4,10 @@
 players = {}
 scores = { a: 0, b: 0, c: 0 }
 active_player = null
-active_clue = null
+active_category = null
+active_level = null
 faye = null
+board = null
 
 # setup state machine
 fsm = StateMachine.create
@@ -28,9 +30,12 @@ fsm = StateMachine.create
 
     onclue_selected: (event, from, to, click_event) ->
       $(click_event.target).unbind 'click'
-      active_clue = click_event.target.id
-      $("##{active_clue}").attr "src", '/images/x.png'
-      show_modal board[active_clue]
+      target = $(click_event.target)
+      md = target.attr('id').match(/^clue_(\d)_(\d)$/)
+      active_category = parseInt(md[2]) - 1
+      active_level = parseInt(md[1]) - 1
+      target.attr "src", '/images/x.png'
+      show_modal()
       $('#clue_read').show()
 
     onclue_read: ->
@@ -52,13 +57,16 @@ fsm = StateMachine.create
 
     onanswer_correct: ->
       faye.publish "/state/#{active_player}", state: 'inactive'
-      scores[players[active_player]] += board[active_clue].value
+      scores[players[active_player]] += value(active_level)
       show_scores()
 
     onanswer_wrong: ->
       faye.publish "/state/#{active_player}", state: 'inactive'
-      scores[players[active_player]] -= board[active_clue].value
+      scores[players[active_player]] -= value(active_level)
       show_scores()
+
+value = (level) ->
+  (level + 1) * 200
 
 # faye setup
 $.getScript util.faye_client_url, ->
@@ -70,6 +78,12 @@ $.getScript util.faye_client_url, ->
     faye.publish "/pong/#{data.uuid}", { team }
   faye.subscribe '/buzz', (data) -> fsm.buzz_received(data)
   fsm.start()
+
+# load board
+$.getJSON '/javascripts/clues.json', (data) ->
+  board = data
+  for i in [0...6] # 6 categories
+    $('#category_'+(i+1)).text(data.categories[i])
 
 # game logic
 team_counts = ->
@@ -95,11 +109,11 @@ show_teams = ->
   for team, count of team_counts()
     $("#members-#{team}").text count
 
-show_modal = (clue) ->
+show_modal = ->
   $('#modal').addClass('active')
-  $('#modal .modal_points').text clue.value
-  $('#modal .modal_category').text clue.category
-  $('#modal .modal_clue').text clue.clue
+  $('#modal .modal_points').text value(active_level)
+  $('#modal .modal_category').text board.categories[active_category]
+  $('#modal .modal_clue').text board.clues[active_level][active_category]
 
 # setup dom on document ready
 $ ->
@@ -110,4 +124,3 @@ $ ->
   $('#answer_wrong').click -> fsm.answer_wrong()
   $('#no_buzz').click -> fsm.no_buzz()
   $('#clue_read').click -> fsm.clue_read()
-

@@ -8,13 +8,15 @@
     <script src="/assets/master.js" type="text/javascript"></script>
     <script type="text/javascript" src="/javascripts/secret_board_clues.js"></script>
     <script>
-     window.onbeforeunload = function (e) {
-       var e = e || window.event
-       // For IE and Firefox prior to version 4
-       if (e) { e.returnValue = 'Sure?' }
-       // For Safari
-       return 'Sure?'
-     };
+     if (window.location.host != 'localhost:9292') {
+       window.onbeforeunload = function (e) {
+         var e = e || window.event
+         // For IE and Firefox prior to version 4
+         if (e) { e.returnValue = 'Sure?' }
+         // For Safari
+         return 'Sure?'
+       }
+     }
 
      var url = window.location.protocol + "//" + window.location.host
      $(function () { $('#clientaddress').val(url) })
@@ -63,52 +65,52 @@
       </tr>
 
       <tr>
-        <td><img src="images/slice_1_1.png" class="clue" id="clue_1_1" style="width: 228px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_1_2.png" class="clue" id="clue_1_2" style="width: 207px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_1_3.png" class="clue" id="clue_1_3" style="width: 213px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_1_4.png" class="clue" id="clue_1_4" style="width: 207px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_1_5.png" class="clue" id="clue_1_5" style="width: 216px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_1_6.png" class="clue" id="clue_1_6" style="width: 216px; height: 168px; border-width: 0px;"></td>
+        <td><img src="images/slice_1_1.png" class="clue" id="clue_1_1"></td>
+        <td><img src="images/slice_1_2.png" class="clue" id="clue_1_2"></td>
+        <td><img src="images/slice_1_3.png" class="clue" id="clue_1_3"></td>
+        <td><img src="images/slice_1_4.png" class="clue" id="clue_1_4"></td>
+        <td><img src="images/slice_1_5.png" class="clue" id="clue_1_5"></td>
+        <td><img src="images/slice_1_6.png" class="clue" id="clue_1_6"></td>
       </tr>
       <tr>
-        <td><img src="images/slice_2_1.png" class="clue" id="clue_2_1" style="width: 228px; height: 153px; border-width: 0px;"></td>
-        <td><img src="images/slice_2_2.png" class="clue" id="clue_2_2" style="width: 207px; height: 153px; border-width: 0px;"></td>
-        <td><img src="images/slice_2_3.png" class="clue" id="clue_2_3" style="width: 213px; height: 153px; border-width: 0px;"></td>
-        <td><img src="images/slice_2_4.png" class="clue" id="clue_2_4" style="width: 207px; height: 153px; border-width: 0px;"></td>
-        <td><img src="images/slice_2_5.png" class="clue" id="clue_2_5" style="width: 216px; height: 153px; border-width: 0px;"></td>
-        <td><img src="images/slice_2_6.png" class="clue" id="clue_2_6" style="width: 216px; height: 153px; border-width: 0px;"></td>
+        <td><img src="images/slice_2_1.png" class="clue" id="clue_2_1"></td>
+        <td><img src="images/slice_2_2.png" class="clue" id="clue_2_2"></td>
+        <td><img src="images/slice_2_3.png" class="clue" id="clue_2_3"></td>
+        <td><img src="images/slice_2_4.png" class="clue" id="clue_2_4"></td>
+        <td><img src="images/slice_2_5.png" class="clue" id="clue_2_5"></td>
+        <td><img src="images/slice_2_6.png" class="clue" id="clue_2_6"></td>
       </tr>
       <tr>
-        <td><img src="images/slice_3_1.png" class="clue" id="clue_3_1" style="width: 228px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_3_2.png" class="clue" id="clue_3_2" style="width: 207px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_3_3.png" class="clue" id="clue_3_3" style="width: 213px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_3_4.png" class="clue" id="clue_3_4" style="width: 207px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_3_5.png" class="clue" id="clue_3_5" style="width: 216px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_3_6.png" class="clue" id="clue_3_6" style="width: 216px; height: 159px; border-width: 0px;"></td>
+        <td><img src="images/slice_3_1.png" class="clue" id="clue_3_1"></td>
+        <td><img src="images/slice_3_2.png" class="clue" id="clue_3_2"></td>
+        <td><img src="images/slice_3_3.png" class="clue" id="clue_3_3"></td>
+        <td><img src="images/slice_3_4.png" class="clue" id="clue_3_4"></td>
+        <td><img src="images/slice_3_5.png" class="clue" id="clue_3_5"></td>
+        <td><img src="images/slice_3_6.png" class="clue" id="clue_3_6"></td>
       </tr>
       <tr>
-        <td><img src="images/slice_4_1.png" class="clue" id="clue_4_1" style="width: 228px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_4_2.png" class="clue" id="clue_4_2" style="width: 207px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_4_3.png" class="clue" id="clue_4_3" style="width: 213px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_4_4.png" class="clue" id="clue_4_4" style="width: 207px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_4_5.png" class="clue" id="clue_4_5" style="width: 216px; height: 159px; border-width: 0px;"></td>
-        <td><img src="images/slice_4_6.png" class="clue" id="clue_4_6" style="width: 216px; height: 159px; border-width: 0px;"></td>
+        <td><img src="images/slice_4_1.png" class="clue" id="clue_4_1"></td>
+        <td><img src="images/slice_4_2.png" class="clue" id="clue_4_2"></td>
+        <td><img src="images/slice_4_3.png" class="clue" id="clue_4_3"></td>
+        <td><img src="images/slice_4_4.png" class="clue" id="clue_4_4"></td>
+        <td><img src="images/slice_4_5.png" class="clue" id="clue_4_5"></td>
+        <td><img src="images/slice_4_6.png" class="clue" id="clue_4_6"></td>
       </tr>
       <tr>
-        <td><img src="images/slice_5_1.png" class="clue" id="clue_5_1" style="width: 228px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_5_2.png" class="clue" id="clue_5_2" style="width: 207px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_5_3.png" class="clue" id="clue_5_3" style="width: 213px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_5_4.png" class="clue" id="clue_5_4" style="width: 207px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_5_5.png" class="clue" id="clue_5_5" style="width: 216px; height: 168px; border-width: 0px;"></td>
-        <td><img src="images/slice_5_6.png" class="clue" id="clue_5_6" style="width: 216px; height: 168px; border-width: 0px;"></td>
+        <td><img src="images/slice_5_1.png" class="clue" id="clue_5_1"></td>
+        <td><img src="images/slice_5_2.png" class="clue" id="clue_5_2"></td>
+        <td><img src="images/slice_5_3.png" class="clue" id="clue_5_3"></td>
+        <td><img src="images/slice_5_4.png" class="clue" id="clue_5_4"></td>
+        <td><img src="images/slice_5_5.png" class="clue" id="clue_5_5"></td>
+        <td><img src="images/slice_5_6.png" class="clue" id="clue_5_6"></td>
       </tr>
       <tr>
-        <td><img alt=" " src="images/slice_6_1.png" style="width: 228px;  height: 266px; border-width: 0px;"></td>
-        <td><img alt=" " src="images/slice_6_2.png" style="width: 207px;  height: 266px; border-width: 0px;"></td>
-        <td><img alt=" " src="images/slice_6_3.png" style="width: 213px;  height: 266px; border-width: 0px;"></td>
-        <td><img alt=" " src="images/slice_6_4.png" style="width: 207px;  height: 266px; border-width: 0px;"></td>
-        <td><img alt=" " src="images/slice_6_5.png" style="width: 216px;  height: 266px; border-width: 0px;"></td>
-        <td><img alt=" " src="images/slice_6_6.png" style="width: 216px;  height: 266px; border-width: 0px;"></td>
+        <td><img src="images/slice_6_1.png"></td>
+        <td><img src="images/slice_6_2.png"></td>
+        <td><img src="images/slice_6_3.png"></td>
+        <td><img src="images/slice_6_4.png"></td>
+        <td><img src="images/slice_6_5.png"></td>
+        <td><img src="images/slice_6_6.png"></td>
       </tr>
     </table>
 
