@@ -9,7 +9,7 @@ $.getScript util.faye_client_url, ->
   faye = new Faye.Client(util.faye_url)
 
   faye.subscribe "/pong/#{uuid}", (data) ->
-    $('#tag').html "You're Team #{data.team.toUpperCase()}"
+    $('#tag').html "Go Team #{data.team.toUpperCase()}!"
 
   faye.subscribe "/state/#{uuid}", (data) ->
     $('body').removeClass('active inactive').addClass(data.state)

@@ -5,19 +5,20 @@
 @import 'mixins/buttons';
 
 body {
-    font-family: verdana, helvetica, sans-serif;
+  font-family: verdana, helvetica, sans-serif;
+  text-align: center;
 }
 
 .active {
-  background-color: #40ff40;
+  background-color: black;
 }
 
 h1, h2 {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .log {
@@ -32,6 +33,13 @@ h1 {
 button {
   @include fancy-button;
   height: 300px;
+  border-radius: 50%;
+  width: 50vw;
+  height: 50vw;
+}
+
+.active button {
+  border: 5vw solid gold;
 }
 
 @media screen and (max-device-width: 480px) {
@@ -48,5 +56,5 @@ button {
 
 
 #playerlog {
-    display: none;
+  display: none;
 }
